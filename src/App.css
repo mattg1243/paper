@@ -1,5 +1,6 @@
 body {
-  background:#f3f3f3;
+  background:#10151D;
+  color: white;
 }
 
 img {
@@ -21,7 +22,7 @@ button:focus {
 
 .App-header {
   background-color: #2c3e50;
-  height: 90px;
+  height: 2rem;
   padding: 30px;
   color: white;
   margin-bottom: 2rem;
@@ -29,6 +30,51 @@ button:focus {
 
 .App-title {
   font-size: 1.5em;
+}
+
+.trending-list {
+
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+
+}
+
+.trending-coin {
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border: .5px solid #ffffff41;
+  border-radius: 1em;
+  height: 5rem;
+  margin: 1rem;
+  padding: .5rem;
+
+}
+
+.trending-coin-ticker {
+  align-self: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+
+.flex-col-center {
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
+img {
+
+  max-height: 50%;
+  max-width: 100%;
+  margin: auto;
+
 }
 
 .recipe_buttons {
