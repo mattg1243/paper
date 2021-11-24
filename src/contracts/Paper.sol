@@ -5,7 +5,7 @@ contract Paper {
     address public owner;
     string public name = 'PaperCoin';
     string public symbol = 'PAPER';
-    uint256 public totalSupply = 1000000000000000000000000000000000000000000000000000000000000000000000;     // 1 million Test Tether in our contract
+    uint256 public totalSupply = 100000000000000000000000000000000000000000000000000000000000000000000000000000;     // Max size for a 256bit integer
     uint8 public decimals = 18;
 
     event Transfer(
