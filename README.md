@@ -40,6 +40,20 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
+
+### Connecting to Ropsten testnet with MetaMask
+Since PAPER is an ERC-20 implementation, users will need a MetaMask wallet (or any HDWalletprovider) connected to Ropsten testnet to interact with the contract and sign transactions.
+<div align="center">
+    <img src="docs/images/metamask_ropsten.png">
+</div>
+
+### Getting testnet ether from a Ropsten faucet
+Users can acquire Ropsten rETH from any Ropsten faucet. Simply provide the faucet with your address on Ropsten network and the faucet will pour you some test ether!
+
+List of recomended faucets for Ropsten
+[Ropsten Faucet](https://faucet.ropsten.be)
+[Dimensions Network faucet](https://faucet.dimensions.network)
+
 ## Truffle
 In the root directory, you can run:
  `truffle compile` 
@@ -51,6 +65,7 @@ In the root directory, you can run:
 It would be possible to create this application without having a native coin for transacting with, however, we felt it was in the spirit of crypto to create this mock coin. $PAPER is defined in it's simplicity in [Paper.sol](https://github.com/mattg1243/paper/blob/main/src/contracts/Paper.sol).
 
 Paper makes use of this native coin to simulate trading in a crypto market. PAPER utilizes 2 decimal places to mimick the most common USD denom. PAPER can be thought of as a mock USDC in this program. Users can mint as many PAPER as they'd like to trade with, and they can burn PAPER whenever they want to decrease their buying power. This is accomplished by creating a simple smart contract that defines the PAPER coin and it's associated functions, and deploying that contract to Ropsten testnet. It would be cost ineffective to deploy on mainnet, since this is designed for paper trading. By keeping the contracts on Ropsten, required gas fees for transacting are paid in testnet Ether.
+
 
 ## $PAPER functions
 For demonstration purposes, assume owner = '0x3010DC4824C238519D20A913BC1622d4901b0EC6'
