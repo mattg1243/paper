@@ -86,6 +86,7 @@ contract Paper {
 
         balanceOf[msg.sender] -= _value;
         emit Burn(msg.sender, address(0), _value);
+        return true;
     }
     
 }
