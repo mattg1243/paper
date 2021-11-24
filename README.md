@@ -41,30 +41,25 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 
 ## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Paper makes use of a native coin ($PAPER) to simulate paper trading in a crypto market. PAPER can be thought of as a mock USDC in this program. Users can mint as many PAPER as they'd like to trade with, and they can burn PAPER whenever they want to decrease their buying power. This is accomplished by creating a simple smart contract that defines the PAPER coin and it's associated functions, and deploying that contract to Ropsten testnet. It would be cost ineffective to deploy on mainnet, since this is Paper trading. By keeping the contracts on Ropsten, required gas fees for transacting are paid in testnet Ether.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## $PAPER functions
+For demonstration purposes, assume owner = '0x3010DC4824C238519D20A913BC1622d4901b0EC6'
+### Balances
+```sh
+    paper.balanceOf(owner).toString()
+```
+The balanceOf function is a mapping of addresses to uint256 balances. It takes only one argument, the address of who's balance you'd like to check. Since it returns a mapping you need to convert it to a string to isolate the balance of the corresponding address.
+### Mint
+```sh
+    paper.mint(owner, 1000)
+```
+PAPER uses 2 decimal places to mimick common USD denoms. This command mints 10.00 PAPER and sends it to the owner address.
+### Burn
+```sh
+    paper.burn(1000)
+```
+This command burns 10.00 PAPER from the balance of whoever calls the function. Notice that an address is not required as a function param. The burn function will automatically burn the amount specified for whoever the msg.sender is.
 
-### Code Splitting
+To learn more about PAPER, check out the [PAPER smart contract](https://github.com/mattg1243/paper/blob/main/src/contracts/Paper.sol).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
