@@ -108,5 +108,5 @@ To learn more about PAPER, check out the [PAPER smart contract](https://github.c
 
 [contributors-shield]: https://img.shields.io/github/contributors/mattg1243/paper.svg?style=for-the-badge
 [contributors-url]: https://github.com/mattg1243/paper/graphs/contributors
-[issues-shield]: https://img.shields.io/github/issues/ethgallucci/Mockingbird.svg?style=for-the-badge
-[issues-url]: https://github.com/ethgallucci/Mockingbird/issues
+[issues-shield]: https://img.shields.io/github/issues/mattg1243/paper.svg?style=for-the-badge
+[issues-url]: https://github.com/mattg1243/paper/issues
