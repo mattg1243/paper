@@ -26,10 +26,10 @@ class TrendingCoin extends Component {
         return (
             <>
             <div key={this.props.coin.item.coin_id} className="trending-coin">
-                <div className="trending-coin-img flex-col-center">
+                <div className="trending-coin-img">
                     <img src={this.props.coin.item.large} alt="coin logo"/>
+                    <p className="trending-coin-ticker">{this.props.coin.item.symbol}</p>
                 </div>
-                <p className="trending-coin-ticker flex-col-center">{this.props.coin.item.symbol}</p>
                 <p className="flex-col-center">$ {this.state.coinPrice.usd}</p>
             </div>
         </>

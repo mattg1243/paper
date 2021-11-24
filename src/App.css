@@ -36,6 +36,8 @@ button:focus {
 
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   padding: 2rem;
 
 }
@@ -48,16 +50,22 @@ button:focus {
   border: .5px solid #ffffff41;
   border-radius: 1em;
   height: 5rem;
+  width: 50%;
   margin: 1rem;
   padding: .5rem;
 
 }
 
+.trending-coin-img {
+
+  display: block;
+
+}
+
 .trending-coin-ticker {
-  align-self: center;
   position: absolute;
-  left: 0;
-  right: 0;
+  left: 0 auto;
+  right: 0 auto;
 }
 
 .flex-col-center {
@@ -80,7 +88,7 @@ img {
 .recipe_buttons {
   border: solid 2px #e74c3c;
   background: transparent;
-  padding: 0.4rem 0.6rem;
+  padding: 0.4rem 0.6re;
   margin: 0 0.2rem;
   border-radius: 1px;
   font-size: 0.8rem;
