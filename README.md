@@ -7,7 +7,7 @@
 <br />
 <div align="center">
     <a href="https://github.com/mattg1243/paper">
-    <img src="docs/images/paper_stack.svg" alt="Logo" width="100">
+    <img src="docs/images/paper_stack.png" alt="Logo" width="100">
     </a>
 </div>
 ## Available npm Scripts
