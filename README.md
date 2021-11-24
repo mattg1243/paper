@@ -1,7 +1,12 @@
-# Getting Started with Create React App
+[![Issues][issues-shield]][issues-url]
+[![Contributors][contributors-shield]][contributors-url]
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
+<br />
+<div align="center">
+    <a href="https://github.com/mattg1243/paper">
+    <img src="docs/images/paper_stack.svg" alt="Logo" width="100">
+    </a>
+</div>
 ## Available npm Scripts
 
 In the project directory, you can run:
@@ -56,10 +61,19 @@ List of recomended faucets for Ropsten
 
 ## Truffle
 In the root directory, you can run:
- `truffle compile` 
+ ```truffle compile```
  this will compile all contracts in the project into truffle_abis
- `truffle test` 
+ ```truffle test```
  this will compile all contracts and run tests described in test/paperCoin.test.js
+
+ ### Using the Truffle console
+ Example usage of the truffle console to interact with/debug contract instance.
+```sh
+    truffle console
+    let paper = await Paper.deployed()
+    let owner = await paper.owner()
+```
+With the first command we set 'paper' to the newly deployed contract instance. From there we can grab the contract's owner. Once we have the contract's owner we can test other functions like transfer, mint, and burn. 
 
 ## Learn about $PAPER
 It would be possible to create this application without having a native coin for transacting with, however, we felt it was in the spirit of crypto to create this mock coin. $PAPER is defined in it's simplicity in [Paper.sol](https://github.com/mattg1243/paper/blob/main/src/contracts/Paper.sol).
@@ -87,3 +101,7 @@ This command burns 10.00 PAPER from the balance of whoever calls the function. N
 
 To learn more about PAPER, check out the [PAPER smart contract](https://github.com/mattg1243/paper/blob/main/src/contracts/Paper.sol).
 
+[contributors-shield]: https://img.shields.io/github/contributors/mattg1243/paper.svg?style=for-the-badge
+[contributors-url]: https://github.com/mattg1243/paper/graphs/contributors
+[issues-shield]: https://img.shields.io/github/issues/ethgallucci/Mockingbird.svg?style=for-the-badge
+[issues-url]: https://github.com/ethgallucci/Mockingbird/issues
