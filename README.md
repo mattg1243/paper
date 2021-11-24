@@ -1,5 +1,8 @@
+
+
 [![Issues][issues-shield]][issues-url]
 [![Contributors][contributors-shield]][contributors-url]
+
 
 <br />
 <div align="center">
@@ -11,8 +14,8 @@
 
 In the project directory, you can run:
 
-### `npm install`
-### `npm start`
+`npm install`
+`npm start`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
@@ -20,12 +23,12 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
-### `npm test`
+`npm test`
 
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+`npm run build`
 
 Builds the app for production to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
@@ -35,7 +38,7 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+`npm run eject`
 
 **Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
@@ -44,20 +47,6 @@ If you aren’t satisfied with the build tool and configuration choices, you can
 Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-
-### Connecting to Ropsten testnet with MetaMask
-Since PAPER is an ERC-20 implementation, users will need a MetaMask wallet (or any HDWalletprovider) connected to Ropsten testnet to interact with the contract and sign transactions.
-<div align="center">
-    <img src="docs/images/metamask_ropsten.png">
-</div>
-
-### Getting testnet ether from a Ropsten faucet
-Users can acquire Ropsten rETH from any Ropsten faucet. Simply provide the faucet with your address on Ropsten network and the faucet will pour you some test ether!
-
-List of recomended faucets for Ropsten
-[Ropsten Faucet](https://faucet.ropsten.be)
-[Dimensions Network faucet](https://faucet.dimensions.network)
 
 ## Truffle
 In the root directory, you can run:
@@ -74,6 +63,21 @@ In the root directory, you can run:
     let owner = await paper.owner()
 ```
 With the first command we set 'paper' to the newly deployed contract instance. From there we can grab the contract's owner. Once we have the contract's owner we can test other functions like transfer, mint, and burn. 
+
+### Connecting to Ropsten testnet with MetaMask
+Since PAPER is an ERC-20 implementation, users will need a MetaMask wallet (or any HDWalletprovider) connected to Ropsten testnet to interact with the contract and sign transactions.
+<div align="center">
+    <img src="docs/images/metamask_ropsten.png">
+</div>
+
+### Getting testnet ether from a Ropsten faucet
+Users can acquire Ropsten rETH from any Ropsten faucet. Simply provide the faucet with your address on Ropsten network and the faucet will pour you some test ether!
+
+List of recomended faucets for Ropsten
+[Ropsten Faucet](https://faucet.ropsten.be)
+[Dimensions Network faucet](https://faucet.dimensions.network)
+
+
 
 ## Learn about $PAPER
 It would be possible to create this application without having a native coin for transacting with, however, we felt it was in the spirit of crypto to create this mock coin. $PAPER is defined in it's simplicity in [Paper.sol](https://github.com/mattg1243/paper/blob/main/src/contracts/Paper.sol).
