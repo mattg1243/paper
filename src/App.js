@@ -19,26 +19,17 @@ class App extends Component {
     this.setState({ coin: price })
 
   }
-
-  getTrending = async (event) => {
-    event.preventDefault();
-    
-    const response = await fetch(`https://api.coingecko.com/api/v3/search/trending`);
-    const list = await response.json();
-
-    console.log(list['coins'])
-    this.setState({ trending: list['coins'] })
-
-  }
   
   render() {
       return (
         
         <div className="App">
           <div className="App-header">
-            <h1 className="App-title">Paper</h1>
+            <h1  className="App-title">
+              Paper
+            </h1>
           </div>
-          <TrendingList getTrending={this.getTrending} trending={this.state.trending}/>
+          <TrendingList />
         </div>
 
       

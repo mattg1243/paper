@@ -17,7 +17,8 @@ class TrendingCoin extends Component {
 
     componentDidMount() { 
     
-        this.getPrice() 
+        this.getPrice()
+         
 
     }
 
@@ -26,7 +27,7 @@ class TrendingCoin extends Component {
         return (
             <>
             <div key={this.props.coin.item.coin_id} className="trending-coin">
-                <div className="trending-coin-img">
+                <div className="trending-coin-img flex-col-center">
                     <img src={this.props.coin.item.large} alt="coin logo"/>
                     <p className="trending-coin-ticker">{this.props.coin.item.symbol}</p>
                 </div>
