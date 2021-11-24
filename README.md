@@ -47,9 +47,10 @@ In the root directory, you can run:
  `truffle test` 
  this will compile all contracts and run tests described in test/paperCoin.test.js
 
-## Learn More
+## Learn about $PAPER
+It would be possible to create this application without having a native coin for transacting with, however, we felt it was in the spirit of crypto to create this mock coin. $PAPER is defined in it's simplicity in [Paper.sol](https://github.com/mattg1243/paper/blob/main/src/contracts/Paper.sol).
 
-Paper makes use of a native coin ($PAPER) to simulate paper trading in a crypto market. PAPER utilizes 2 decimal places to mimick the most common USD denom. PAPER can be thought of as a mock USDC in this program. Users can mint as many PAPER as they'd like to trade with, and they can burn PAPER whenever they want to decrease their buying power. This is accomplished by creating a simple smart contract that defines the PAPER coin and it's associated functions, and deploying that contract to Ropsten testnet. It would be cost ineffective to deploy on mainnet, since this is Paper trading. By keeping the contracts on Ropsten, required gas fees for transacting are paid in testnet Ether.
+Paper makes use of this native coin to simulate trading in a crypto market. PAPER utilizes 2 decimal places to mimick the most common USD denom. PAPER can be thought of as a mock USDC in this program. Users can mint as many PAPER as they'd like to trade with, and they can burn PAPER whenever they want to decrease their buying power. This is accomplished by creating a simple smart contract that defines the PAPER coin and it's associated functions, and deploying that contract to Ropsten testnet. It would be cost ineffective to deploy on mainnet, since this is designed for paper trading. By keeping the contracts on Ropsten, required gas fees for transacting are paid in testnet Ether.
 
 ## $PAPER functions
 For demonstration purposes, assume owner = '0x3010DC4824C238519D20A913BC1622d4901b0EC6'
