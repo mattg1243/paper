@@ -2,10 +2,11 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Available npm Scripts
 
 In the project directory, you can run:
 
+### `npm install`
 ### `npm start`
 
 Runs the app in the development mode.\
@@ -39,32 +40,50 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Connecting to Ropsten testnet with MetaMask
+Since PAPER is an ERC-20 implementation, users will need a MetaMask wallet (or any HDWalletprovider) connected to Ropsten testnet to interact with the contract and sign transactions.
+<div align="center">
+    <img src="docs/images/metamask_ropsten.png">
+</div>
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Getting testnet ether from a Ropsten faucet
+Users can acquire Ropsten rETH from any Ropsten faucet. Simply provide the faucet with your address on Ropsten network and the faucet will pour you some test ether!
 
-### Code Splitting
+List of recomended faucets for Ropsten
+[Ropsten Faucet](https://faucet.ropsten.be)
+[Dimensions Network faucet](https://faucet.dimensions.network)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Truffle
+In the root directory, you can run:
+ `truffle compile` 
+ this will compile all contracts in the project into truffle_abis
+ `truffle test` 
+ this will compile all contracts and run tests described in test/paperCoin.test.js
 
-### Analyzing the Bundle Size
+## Learn about $PAPER
+It would be possible to create this application without having a native coin for transacting with, however, we felt it was in the spirit of crypto to create this mock coin. $PAPER is defined in it's simplicity in [Paper.sol](https://github.com/mattg1243/paper/blob/main/src/contracts/Paper.sol).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Paper makes use of this native coin to simulate trading in a crypto market. PAPER utilizes 2 decimal places to mimick the most common USD denom. PAPER can be thought of as a mock USDC in this program. Users can mint as many PAPER as they'd like to trade with, and they can burn PAPER whenever they want to decrease their buying power. This is accomplished by creating a simple smart contract that defines the PAPER coin and it's associated functions, and deploying that contract to Ropsten testnet. It would be cost ineffective to deploy on mainnet, since this is designed for paper trading. By keeping the contracts on Ropsten, required gas fees for transacting are paid in testnet Ether.
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## $PAPER functions
+For demonstration purposes, assume owner = '0x3010DC4824C238519D20A913BC1622d4901b0EC6'
+### Balances
+```sh
+    paper.balanceOf(owner).toString()
+```
+The balanceOf function is a mapping of addresses to uint256 balances. It takes only one argument, the address of who's balance you'd like to check. Since it returns a mapping you need to convert it to a string to isolate the balance of the corresponding address.
+### Mint
+```sh
+    paper.mint(owner, 1000)
+```
+Remember PAPER uses 2 decimal places to mimick common USD denoms. This command mints 10.00 PAPER and sends it to the owner address. This function emits a Mint event which will be viewable on-chain.
+### Burn
+```sh
+    paper.burn(1000)
+```
+This command burns 10.00 PAPER from the balance of whoever calls the function. Notice that an address is not required as a function param. The burn function will automatically burn the amount specified for whoever the msg.sender is. This function emits a Burn event which will be viewable on-chain.
 
-### Advanced Configuration
+To learn more about PAPER, check out the [PAPER smart contract](https://github.com/mattg1243/paper/blob/main/src/contracts/Paper.sol).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
