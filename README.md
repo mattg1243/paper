@@ -8,6 +8,7 @@
 <div align="center">
     <a href="https://github.com/mattg1243/paper">
     <img src="docs/images/paper_stack.png" alt="Logo" width="100">
+    <h1>Paper</h1>
     </a>
 </div>
 ## Available npm Scripts
