@@ -1,13 +1,22 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+[![Issues][issues-shield]][issues-url]
+[![Contributors][contributors-shield]][contributors-url]
+
+
+<br />
+<div align="center">
+    <a href="https://github.com/mattg1243/paper">
+    <img src="docs/images/paper_stack.png" alt="Logo" width="100">
+    <h1>Paper</h1>
+    </a>
+</div>
 ## Available npm Scripts
 
 In the project directory, you can run:
 
-### `npm install`
-### `npm start`
+`npm install`
+`npm start`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
@@ -15,12 +24,12 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
-### `npm test`
+`npm test`
 
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+`npm run build`
 
 Builds the app for production to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
@@ -30,7 +39,7 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+`npm run eject`
 
 **Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
@@ -40,6 +49,21 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
+## Truffle
+In the root directory, you can run:
+ ```truffle compile```
+ this will compile all contracts in the project into truffle_abis
+ ```truffle test```
+ this will compile all contracts and run tests described in test/paperCoin.test.js
+
+ ### Using the Truffle console
+ Example usage of the truffle console to interact with/debug contract instance.
+```sh
+    truffle console
+    let paper = await Paper.deployed()
+    let owner = await paper.owner()
+```
+With the first command we set 'paper' to the newly deployed contract instance. From there we can grab the contract's owner. Once we have the contract's owner we can test other functions like transfer, mint, and burn. 
 
 ### Connecting to Ropsten testnet with MetaMask
 Since PAPER is an ERC-20 implementation, users will need a MetaMask wallet (or any HDWalletprovider) connected to Ropsten testnet to interact with the contract and sign transactions.
@@ -54,12 +78,7 @@ List of recomended faucets for Ropsten
 [Ropsten Faucet](https://faucet.ropsten.be)
 [Dimensions Network faucet](https://faucet.dimensions.network)
 
-## Truffle
-In the root directory, you can run:
- `truffle compile` 
- this will compile all contracts in the project into truffle_abis
- `truffle test` 
- this will compile all contracts and run tests described in test/paperCoin.test.js
+
 
 ## Learn about $PAPER
 It would be possible to create this application without having a native coin for transacting with, however, we felt it was in the spirit of crypto to create this mock coin. $PAPER is defined in it's simplicity in [Paper.sol](https://github.com/mattg1243/paper/blob/main/src/contracts/Paper.sol).
@@ -87,3 +106,7 @@ This command burns 10.00 PAPER from the balance of whoever calls the function. N
 
 To learn more about PAPER, check out the [PAPER smart contract](https://github.com/mattg1243/paper/blob/main/src/contracts/Paper.sol).
 
+[contributors-shield]: https://img.shields.io/github/contributors/mattg1243/paper.svg?style=for-the-badge
+[contributors-url]: https://github.com/mattg1243/paper/graphs/contributors
+[issues-shield]: https://img.shields.io/github/issues/ethgallucci/Mockingbird.svg?style=for-the-badge
+[issues-url]: https://github.com/ethgallucci/Mockingbird/issues
