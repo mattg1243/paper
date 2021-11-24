@@ -24,6 +24,7 @@ contract Paper {
     mapping(address => mapping(address => uint256)) public allowance;
 
     constructor () {
+        // For testing -> Send total supply to contract deployer
         balanceOf[msg.sender] = totalSupply;
         owner = msg.sender;
     }
