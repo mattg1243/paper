@@ -48,6 +48,7 @@ button:focus {
   justify-content: center;
   align-items: center;
   padding: 1rem;
+  height: 25vh;
 
 }
 
@@ -55,7 +56,7 @@ button:focus {
 
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
   border: .5px solid #ffffff41;
   border-radius: 1em;
   height: 5rem;

@@ -23,8 +23,7 @@ class TrendingList extends Component {
     render() {
         return (
             <div>
-                <h3>Trending Coins</h3>
-            <div className="trending-list">{this.state.trending.slice(0, 5).map((coin) => (
+            <div className="trending-list">{this.state.trending.map((coin) => (
                 <TrendingCoin coin={coin} />
             ))}</div>
         </div>
