@@ -1,5 +1,5 @@
 body {
-  background:#10151D;
+  background:#363537;
   color: white;
   max-width: 100%;
   font-family: 'M PLUS 1 Code', sans-serif;
@@ -166,11 +166,6 @@ img {
 
 input[type="text"] { 
   outline: none;
-}
-
-input:-webkit-autofill {
-  -webkit-box-shadow: 0 0 0 30px #f3f3f3 inset;
-  -webkit-text-fill-color: #2c3e50 !important;
 }
 
 /******** RECIPE.js ********/

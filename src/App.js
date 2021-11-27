@@ -2,13 +2,21 @@ import React, { Component } from 'react';
 import './App.css';
 
 import TrendingList from './components/TrendingList';
+import PersistentDrawerLeft from './components/Dash.js';
+import { Paper, ThemeProvider } from "@mui/material";
+import { createTheme } from "@mui/material/styles"
 
 class App extends Component {
-  
+
   state  = {
-    coin: "",
     trending: [],
   }
+
+  theme = createTheme({
+    palette: {
+      mode: 'dark',
+    }
+  })
 
   getCoin = async (event, coinID) => {
     event.preventDefault();
@@ -22,17 +30,14 @@ class App extends Component {
   
   render() {
       return (
-        
-        <div className="App">
-          <div className="App-header">
-            <h1  className="App-title">
-              Paper
-            </h1>
-          </div>
-          <TrendingList />
-        </div>
-
-      
+          <ThemeProvider theme={this.theme} >
+           <Paper>
+              <div className="App">
+                <PersistentDrawerLeft />
+                <TrendingList />
+              </div>
+            </Paper>
+          </ThemeProvider> 
     );
   }
   
