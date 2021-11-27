@@ -1,4 +1,9 @@
 import React, { Component } from 'react';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import Typography from '@mui/material/Typography';
+import { CardActionArea } from '@mui/material';
 
 class TrendingCoin extends Component { 
 
@@ -26,15 +31,33 @@ class TrendingCoin extends Component {
         
         return (
             <>
-            <div key={this.props.coin.item.coin_id} className="trending-coin">
+            <Card sx={{ maxWidth: 345 }} key={this.props.coin.item.coin_id}>
+                <CardActionArea>
+                    <CardContent>
+                    <Typography gutterBottom variant="h5" component="div">
+                        <span>
+                        
+                        <p className="trending-coin-ticker"> <img src={this.props.coin.item.large} alt="coin logo"/> {this.props.coin.item.symbol}</p>
+                        </span>
+                    </Typography>
+                    <Typography variant="body2" color="text.secondary">
+                        {this.state.coinPrice.usd}
+                    </Typography>
+                    </CardContent>
+                </CardActionArea>
+            </Card>
+        </>
+        )
+    }
+ }
+
+ /*
+<div key={this.props.coin.item.coin_id} className="trending-coin">
                 <div className="trending-coin-img flex-col-center">
                     <img src={this.props.coin.item.large} alt="coin logo"/>
                     <p className="trending-coin-ticker">{this.props.coin.item.symbol}</p>
                 </div>
                 <p className="flex-col-center">$ {this.state.coinPrice.usd}</p>
             </div>
-        </>
-        )
-    }
- }
+ */
 export default TrendingCoin;
