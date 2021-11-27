@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import './App.css';
 
+import InspectPage from './components/InspectPage'
 import TrendingList from './components/TrendingList';
 import PersistentDrawerLeft from './components/Dash.js';
 import { Paper, ThemeProvider } from "@mui/material";
@@ -39,6 +40,7 @@ class App extends Component {
                 <Routes>
                   <Route path="/" />
                   <Route path="/trending" element={<TrendingList />} />
+                  <Route path="/search/:coinID/:timeFrame" element={<InspectPage />} />
                 </Routes> 
                 </div>
             </Paper>
