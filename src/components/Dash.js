@@ -25,6 +25,7 @@ import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet';
 import SettingsIcon from '@mui/icons-material/Settings';
 import LogoutIcon from '@mui/icons-material/Logout';
 import InfoIcon from '@mui/icons-material/Info';
+import { TextField } from '@mui/material';
 
 const drawerWidth = 240;
 
@@ -89,7 +90,7 @@ const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })(
       <Box sx={{ display: 'flex' }}>
         <CssBaseline />
         <AppBar position="fixed" open={open}>
-          <Toolbar>
+          <Toolbar style={{ display: 'flex', justifyContent: 'space-between' }}>
             <IconButton
               color="inherit"
               aria-label="open drawer"
@@ -97,9 +98,9 @@ const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })(
               edge="start"
               sx={{ mr: 2, ...(open && { display: 'none' }) }}
             >
-              <MenuIcon style={{ color: theme.palette.primary.main }}/>
+              <MenuIcon style={{ color: theme.palette.text.primary }}/> 
             </IconButton>
-      
+            <TextField id="search-coins" label="Search Coins" variant="standard" />
           </Toolbar>
         </AppBar>
         <Drawer
@@ -125,13 +126,13 @@ const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })(
             {['Positions', 'Watchlist', 'Trending', 'Markets'].map((text, index) => (
                 <Link to={`/${text.toLowerCase()}`} style={{ textDecoration: 'none' }}>
                   <ListItem button key={text} >
-                    <ListItemIcon style={{ color: theme.palette.primary.main }}>
+                    <ListItemIcon style={{ color: theme.palette.text.primary }}>
                       {text == 'Positions' ? <AccountBalanceWalletIcon /> : null}
                       {text == 'Watchlist' ? <ListAltIcon /> : null}
                       {text == 'Trending' ? <TrendingUp /> : null}
                       {text == 'Markets' ? <StorefrontIcon /> : null}
                     </ListItemIcon>
-                  <ListItemText style={{ color: theme.palette.primary.main }} primary={text} />
+                  <ListItemText style={{ color: theme.palette.text.primary }} primary={text} />
                 </ListItem>
               </Link>
             ))}
@@ -140,8 +141,8 @@ const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })(
           <List >
             {['Settings', 'Logout', 'About'].map((text, index) => (
               <Link to={`/${text.toLowerCase()}`} style={{ textDecoration: 'none' }}>
-              <ListItem button key={text} style={{ color: theme.palette.primary.main }}>
-                <ListItemIcon style={{ color: theme.palette.primary.main }}>
+              <ListItem button key={text} style={{ color: theme.palette.text.primary }}>
+                <ListItemIcon style={{ color: theme.palette.text.primary }}>
                   {text == 'Settings' ? <SettingsIcon /> : null}
                   {text == 'Logout' ? <LogoutIcon /> : null}
                   {text == 'About' ? <InfoIcon /> : null}
