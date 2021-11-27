@@ -34,10 +34,12 @@ class TrendingCoin extends Component {
             <Card sx={{ maxWidth: 345 }} key={this.props.coin.item.coin_id}>
                 <CardActionArea>
                     <CardContent>
+                    <CardMedia>
+                        Chart goes here
+                    </CardMedia>
                     <Typography gutterBottom variant="h5" component="div">
-                        <span>
-                        
-                        <p className="trending-coin-ticker"> <img src={this.props.coin.item.large} alt="coin logo"/> {this.props.coin.item.symbol}</p>
+                        <span style={{ display: 'inline-block ' }}>
+                        <p className="trending-coin-ticker"> <img style={{ height: '1rem', width: '1rem' }} src={this.props.coin.item.large} alt="coin logo"/> {this.props.coin.item.symbol}</p>
                         </span>
                     </Typography>
                     <Typography variant="body2" color="text.secondary">
