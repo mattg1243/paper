@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import './App.css';
 
 import TrendingList from './components/TrendingList';
@@ -30,14 +31,20 @@ class App extends Component {
   
   render() {
       return (
+        <Router>
           <ThemeProvider theme={this.theme} >
            <Paper>
               <div className="App">
                 <PersistentDrawerLeft />
-                <TrendingList />
-              </div>
+                <Routes>
+                  <Route path="/" />
+                  <Route path="/trending" element={<TrendingList />} />
+                </Routes> 
+                </div>
             </Paper>
           </ThemeProvider> 
+        </Router>
+          
     );
   }
   

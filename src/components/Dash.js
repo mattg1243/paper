@@ -15,8 +15,16 @@ import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import ListItem from '@mui/material/ListItem';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import MailIcon from '@mui/icons-material/Mail';
+import { Link } from 'react-router-dom'
+
+// custom icons
+import TrendingUp from '@mui/icons-material/TrendingUp';
+import StorefrontIcon from '@mui/icons-material/Storefront';
+import ListAltIcon from '@mui/icons-material/ListAlt';
+import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet';
+import SettingsIcon from '@mui/icons-material/Settings';
+import LogoutIcon from '@mui/icons-material/Logout';
+import InfoIcon from '@mui/icons-material/Info';
 
 const drawerWidth = 240;
 
@@ -89,11 +97,9 @@ const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })(
               edge="start"
               sx={{ mr: 2, ...(open && { display: 'none' }) }}
             >
-              <MenuIcon />
+              <MenuIcon style={{ color: theme.palette.primary.main }}/>
             </IconButton>
-            <Typography variant="h6" noWrap component="div" style={{justifyContent: 'center', alignItems: 'center'}}>
-              Paper
-            </Typography>
+      
           </Toolbar>
         </AppBar>
         <Drawer
@@ -116,24 +122,33 @@ const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })(
           </DrawerHeader>
           <Divider />
           <List>
-            {['Positions', 'Watchlist', 'Scanner', 'Markets'].map((text, index) => (
-              <ListItem button key={text}>
-                <ListItemIcon>
-                  {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                </ListItemIcon>
-                <ListItemText primary={text} />
-              </ListItem>
+            {['Positions', 'Watchlist', 'Trending', 'Markets'].map((text, index) => (
+                <Link to={`/${text.toLowerCase()}`} style={{ textDecoration: 'none' }}>
+                  <ListItem button key={text} >
+                    <ListItemIcon style={{ color: theme.palette.primary.main }}>
+                      {text == 'Positions' ? <AccountBalanceWalletIcon /> : null}
+                      {text == 'Watchlist' ? <ListAltIcon /> : null}
+                      {text == 'Trending' ? <TrendingUp /> : null}
+                      {text == 'Markets' ? <StorefrontIcon /> : null}
+                    </ListItemIcon>
+                  <ListItemText style={{ color: theme.palette.primary.main }} primary={text} />
+                </ListItem>
+              </Link>
             ))}
           </List>
           <Divider />
-          <List>
-            {['Settings', 'Log Out', 'About'].map((text, index) => (
-              <ListItem button key={text}>
-                <ListItemIcon>
-                  {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+          <List >
+            {['Settings', 'Logout', 'About'].map((text, index) => (
+              <Link to={`/${text.toLowerCase()}`} style={{ textDecoration: 'none' }}>
+              <ListItem button key={text} style={{ color: theme.palette.primary.main }}>
+                <ListItemIcon style={{ color: theme.palette.primary.main }}>
+                  {text == 'Settings' ? <SettingsIcon /> : null}
+                  {text == 'Logout' ? <LogoutIcon /> : null}
+                  {text == 'About' ? <InfoIcon /> : null}
                 </ListItemIcon>
-                <ListItemText primary={text} />
+                <ListItemText  primary={text} />
               </ListItem>
+              </Link>
             ))}
           </List>
         </Drawer>
