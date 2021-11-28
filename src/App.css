@@ -56,7 +56,7 @@ button:focus {
 
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   border: .5px solid #ffffff41;
   border-radius: 1em;
   height: 5rem;

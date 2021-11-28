@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import TrendingCoin from './TrendingCoin';
+import { LineChart, Line } from "recharts";
 
 class TrendingList extends Component {
 
