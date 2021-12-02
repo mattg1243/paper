@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { AreaChart, Area, Tooltip, ResponsiveContainer, XAxis, YAxis, CartesianGrid } from 'recharts'
 import StatsBox from './StatsBox'
+import { Button } from '@mui/material';
 
 const InspectPage = () => {
 
@@ -43,7 +44,7 @@ const InspectPage = () => {
         <h1>
             {`${coinID.toUpperCase()}`}
         </h1>
-            <div style={{display: 'flex', justifyContent: 'center'}}>
+            <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
                 <ResponsiveContainer width="80%" height={600}>
                 <AreaChart width={500} height={250} data={chartData} margin={{
                     top: 50,
@@ -58,8 +59,14 @@ const InspectPage = () => {
                     <Area type="natural" dataKey="price" dot={false} stroke="#8884d8" strokeWidth={1}  />
                 </AreaChart>
                 </ResponsiveContainer>
+                <ResponsiveContainer width="80%">
+                    <StatsBox style={{ padding: 20, margin: 10 }} stats={statsData} />   
+                </ResponsiveContainer>
+                <div width="80%" style={{ padding: "2rem", flexDirection: "row", justifyContent: "space-between" }}>
+                    <Button variant="contained" color="success">Buy</Button>
+                    <Button variant="contained" color="error">Sell</Button>
+                </div>
             </div>
-            <StatsBox style={{ padding: 20, margin: 10 }} stats={statsData} />   
         </>
         
 
